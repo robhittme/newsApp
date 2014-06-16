@@ -4,6 +4,12 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 // bower:scss
 // endbower
+.logoHeader{
+    h1 img{
+        width: 200px;
+        height: 200px;
+    }
+}
 .tabContainer{
     text-align: justify;
 }

@@ -1,90 +1,93 @@
 <div class="tabContainer">
   <tabset justified="true">
-  <tab heading="Home">   
-    <article class="columnsContainer flex-container">
-      <section class="col-md-3">
-        <h4>News Articles</h4>
+    <tab heading="Home">   
+      <article class="columnsContainer flex-container">
+        <section class="col-md-3">
+          <h4>News Articles</h4>
             <ul class="relatedArticles">
               <li ng-repeat="news in newsData.data.children">
                 <a ng-click= "selectArticle(news)">{{news.data.title}}</a>
               </li>
             </ul>
-      </section>
-      <section class="col-md-6 selectedArticle">
-        <h4>Selected Article</h4>
-        <div class="flex-container">
-          <div class="frame">
-            <iframe src="{{framesrc}}" name="newsFrame" scrolling="auto" frameborder="no" align="left" height = "600px" width = "700px" id="iframe1"></iframe>
+        </section>
+        <section class="col-md-6 selectedArticle">
+          <h4>Selected Article</h4>
+          <div class="flex-container">
+            <div class="frame">
+              <iframe src="{{framesrc}}" name="newsFrame" scrolling="auto" frameborder="no" align="left" height = "600px" width = "700px" id="iframe1"></iframe>
+            </div>
+          </div> 
+        </section>
+        <section class="col-md-3">
+          <h4>Twitter widget</h4>
+          <a class="twitter-timeline" href="https://twitter.com/FocalApp1/lists/breaking-news" data-widget-id="476055714813579264"></a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </section>
+      </article>
+    </tab>
+    <tab heading="Timeline">
+        <div class="container">
+          <div class="page-header">
+            <h1 id="timeline">TIMELINE</h1>
           </div>
-          
-       </div> 
-    </section>
-      <section class="col-md-3">
-        <h4>Twitter widget</h4>
-        <a class="twitter-timeline" href="https://twitter.com/FocalApp1/lists/breaking-news" data-widget-id="476055714813579264"></a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      </section>
-    </article>
-    <footer class= "nav nav-pills pull-right">
-      <a href="facebook.com/focalapp"><img src="images/02_facebook.png" alt=""></a>
-      <a href="twitter.com/focalapp1"><img src="images/01_twitter.png" alt=""></a>
-      <a href="focalapp.wordpress.com"><img src="images/11_wordpress.png" alt=""></a>
-    </footer>
-  </tab>
-  <tab heading="Timeline">
-      <div class="container">
-        <div class="page-header">
-          <h1 id="timeline">TIMELINE</h1>
-        </div>
-        <ul class="timeline">
-          <li class="firstWeek">
-            <!-- this is the center position -->
-            <div class="timeline-badge info"><i class="glyphicon glyphicon-hand-left"></i>
-            </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading" ng-repeat="news in newsData.data.children">
-                <h4 class="timeline-title" ng-click="selectArticle(news)" ng-show="timelineFilter(news)">{{news.data.title}}</h4>
+          <ul class="timeline">
+            <li class="firstWeek">
+              <!-- this is the center position -->
+              <div class="timeline-badge info">
+                <i class="glyphicon glyphicon-hand-left"></i>
               </div>
-              
-            </div>
-          </li>
-          <li class="timeline-inverted secondWeek">
-            <div class="timeline-badge info"><i class="glyphicon glyphicon-hand-right"></i>
-            </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading" ng-repeat="news in newsData.data.children">
-                <h4 class="timeline-title">{{news.data.title}}</h4>
-              </div>
-            </div>
-          </li>
-          <li class="thirdWeek">
-            <div class="timeline-badge info"><i class="glyphicon glyphicon-hand-left"></i>
-            </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading" ng-repeat="news in newsData.data.children">
-                <h4 class="timeline-title">{{news.data.title}}</h4>
-              </div>
-            </div>
-          </li>
-          <li class="timeline-inverted fourthWeek">
-            <div class="timeline-badge info"><i class="glyphicon glyphicon-hand-right"></i>
-            </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading" ng-repeat="news in newsData.data.children">
-                <h4 class="timeline-title">{{news.data.title}}</h4>
-              </div>
-            </div>
-          </li>
-    </div>
 
-  </tab>
-    <tab heading="About">About</tab>
-    <div class="searchBar">
-      <form ng-submit="searchButton(searchTopic)">
-        <input type="text" placeholder="Search" ng-model="searchTopic">
-        <button type="submit" class="btn btn-default btn-xs">Submit</button>
-      </form>
-    </div>
+              <div class="timeline-panel">
+                <h4>week 1</h4>
+
+                <div class="timeline-heading" ng-repeat="news in newsData.data.children"ng-click="selectArticle(news)">
+                 <p>{{news.data.title}}</p>
+                </div>
+              </div>
+            </li>
+            <!-- secondset -->
+            <li class="timeline-inverted secondWeek">
+              <div class="timeline-badge info"><i class="glyphicon glyphicon-hand-right"></i>
+              </div>
+              <div class="timeline-panel">
+                <h4>week 2</h4>
+                <div class="timeline-heading" ng-repeat="news in newsData.data.children">
+                 <p>{{news.data.title}}</p>
+                </div>
+              </div>
+            </li>
+            <!-- thirdSet -->
+            <li class="thirdWeek">
+              <div class="timeline-badge info"><i class="glyphicon glyphicon-hand-left"></i>
+              </div>
+              <div class="timeline-panel">
+                <h4>week 3</h4>
+                <div class="timeline-heading" ng-repeat="news in newsData.data.children">
+                 <p>{{news.data.title}}</p>
+                </div>
+              </div>
+            </li>
+             <!-- fourthset -->
+            <li class="timeline-inverted fourthWeek">
+              <div class="timeline-badge info"><i class="glyphicon glyphicon-hand-right"></i>
+              </div>
+              <div class="timeline-panel">
+                <h4>week 4</h4>
+                <div class="timeline-heading" ng-repeat="news in newsData.data.children">
+                 <p>{{news.data.title}}</p>
+                </div>
+              </div>
+            </li>
+      </div>
+
+    </tab>
+      <tab heading="About">About</tab>
+      <div class="searchBar">
+        <form ng-submit="searchButton(searchTopic)">
+          <input type="text" placeholder="Search" ng-model="searchTopic">
+          <button type="submit" class="btn btn-default btn-xs">Submit</button>
+        </form>
+      </div>
   </tabset>
 </div>
  

@@ -35,12 +35,13 @@
               <!-- this is the center position -->
               <div class="timeline-badge info">
                 <i class="glyphicon glyphicon-hand-left"></i>
+
               </div>
 
               <div class="timeline-panel">
                 <h4>week 1</h4>
 
-                <div class="timeline-heading" ng-repeat="news in newsData.data.children"ng-click="selectArticle(news)">
+                <div class="timeline-heading" ng-repeat="news in postableNewsData" ng-click="selectArticle(news)">
                  <p>{{news.data.title}}</p>
                 </div>
               </div>
@@ -81,13 +82,23 @@
       </div>
 
     </tab>
-      <tab heading="About">About</tab>
-      <div class="searchBar">
-        <form ng-submit="searchButton(searchTopic)">
-          <input type="text" placeholder="Search" ng-model="searchTopic">
-          <button type="submit" class="btn btn-default btn-xs">Submit</button>
-        </form>
-      </div>
+    <tab heading="About">
+     <div class="aboutPara">
+        <h3>Creating a Focused Narrative.</h3>
+        <p>
+          What I want to do with this application is make it easier for people to get the information that they want.  The aim of Focal is to provide information about a topic all located in a concise and approachable way so that people can understand the issues at hand and come to informed conclusions of their own.  I want to give people the power to understand current affairs quickly and in a straight forward way.  
+        </p>
+        <p>
+          There is so much information out there it can be difficult to get a clear picture of what is going on with a particular issue.  The difficulty of targeting the main point of the issue and the key components leads to misguided opinions and the misinformed motivations.  This app would help simplify the information by putting it all in one place with the ability to look at how it has evolved over time.  This way there is the ability to see the narrative unfold.
+        </p>
+    </div>
+    </tab>
+        <div class="searchBar">
+          <form ng-submit="searchButton(searchTopic)">
+            <input type="text" placeholder="Search" ng-model="searchTopic">
+            <button type="submit" class="btn btn-default btn-xs">Submit</button>
+          </form>
+        </div>
   </tabset>
 </div>
  

@@ -4,14 +4,24 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 // bower:scss
 // endbower
-.logoHeader{
-    h1 img{
-        width: 200px;
-        height: 200px;
-    }
+.aboutPara{
+   width: 50%;
+   margin: 0 auto;
+   padding-bottom: 30px;
+   list-style-type: none; 
+   text-align: justify;
+   img {
+    width: 200px;
+    position: center;
+   }
+
 }
+
 .tabContainer{
     text-align: justify;
+    position: center;
+    display: inline-block;
+    float: left;
 }
 .searchBar{
     text-align: center;
@@ -54,7 +64,6 @@ display: -webkit-flex;
 }
 footer {
     width: 100%;
-    margin: 20px;
     padding: 40px;
     background-color: grey;
     text-align: right;

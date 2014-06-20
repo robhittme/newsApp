@@ -31,7 +31,7 @@
             <h1 id="timeline">TIMELINE</h1>
           </div>
           <ul class="timeline">
-            <li class="firstWeek">
+            <li class="oneMonth">
               <!-- this is the center position -->
               <div class="timeline-badge info">
                 <i class="glyphicon glyphicon-hand-left"></i>
@@ -39,7 +39,7 @@
               </div>
 
               <div class="timeline-panel">
-                <h4>week 1</h4>
+                <h4>Month 1</h4>
 
                 <div class="timeline-heading" ng-repeat="news in postableNewsData" ng-click="selectArticle(news)">
                  <p>{{news.data.title}}</p>
@@ -47,34 +47,34 @@
               </div>
             </li>
             <!-- secondset -->
-            <li class="timeline-inverted secondWeek">
+            <li class="timeline-inverted twoMonths">
               <div class="timeline-badge info"><i class="glyphicon glyphicon-hand-right"></i>
               </div>
               <div class="timeline-panel">
-                <h4>week 2</h4>
-                <div class="timeline-heading" ng-repeat="news in newsData.data.children">
+                <h4>Month 2</h4>
+                <div class="timeline-heading" ng-repeat="news in postableNewsData2" ng-click="selectArticle(news)">
                  <p>{{news.data.title}}</p>
                 </div>
               </div>
             </li>
             <!-- thirdSet -->
-            <li class="thirdWeek">
+            <li class="threeMonths">
               <div class="timeline-badge info"><i class="glyphicon glyphicon-hand-left"></i>
               </div>
               <div class="timeline-panel">
-                <h4>week 3</h4>
-                <div class="timeline-heading" ng-repeat="news in newsData.data.children">
+                <h4>Month 3</h4>
+                <div class="timeline-heading" ng-repeat="news in postableNewsData3" ng-click="selectArticle(news)">
                  <p>{{news.data.title}}</p>
                 </div>
               </div>
             </li>
              <!-- fourthset -->
-            <li class="timeline-inverted fourthWeek">
+            <li class="timeline-inverted fourMonths">
               <div class="timeline-badge info"><i class="glyphicon glyphicon-hand-right"></i>
               </div>
               <div class="timeline-panel">
-                <h4>week 4</h4>
-                <div class="timeline-heading" ng-repeat="news in newsData.data.children">
+                <h4>Month 4</h4>
+                <div class="timeline-heading" ng-repeat="news in postableNewsData4" ng-click="selectArticle(news)">
                  <p>{{news.data.title}}</p>
                 </div>
               </div>

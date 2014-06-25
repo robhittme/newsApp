@@ -1,144 +1,104 @@
 <div class="tabContainer">
-  <tabset justified="true" active="tab.active">
-  <tab heading="Home">   
-    <article class="columnsContainer flex-container">
-      <section class="col-md-3">
-        <h4>News Articles</h4>
+  <tabset justified="true">
+    <tab heading="Home">   
+      <article class="columnsContainer flex-container">
+        <section class="col-md-3">
+          <h4>News Articles</h4>
             <ul class="relatedArticles">
               <li ng-repeat="news in newsData.data.children">
                 <a ng-click= "selectArticle(news)">{{news.data.title}}</a>
               </li>
             </ul>
-      </section>
-      <section class="col-md-6 selectedArticle">
-        <h4>Selected Article</h4>
-        <div class="flex-container">
-          <div class="frame">
-            <iframe src="{{framesrc}}" name="newsFrame" scrolling="auto" frameborder="no" align="left" height = "600px" width = "700px" id="iframe1"></iframe>
+        </section>
+        <section class="col-md-7 selectedArticle">
+          <h4>Selected Article</h4>
+          <div class="flex-container">
+            <div class="frame">
+              <iframe src="{{framesrc}}" name="newsFrame" scrolling="auto" frameborder="no" align="left" height = "600px" width = "700px" id="iframe1"></iframe>
+            </div>
+          </div> 
+        </section>
+        <section class="col-md-2">
+          <h4>Twitter widget</h4>
+          <a class="twitter-timeline" href="https://twitter.com/FocalApp1/lists/breaking-news" data-widget-id="476055714813579264"></a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </section>
+      </article>
+    </tab>
+    <tab heading="Timeline">
+        <div class="container">
+          <div class="page-header">
+            <h1 id="timeline">TIMELINE</h1>
           </div>
-          
-       </div> 
-    </section>
-      <section class="col-md-3">
-        <h4>Twitter widget</h4>
-        <a class="twitter-timeline" href="https://twitter.com/FocalApp1/lists/breaking-news" data-widget-id="476055714813579264"></a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      </section>
-    </article>
-    <footer class= "nav nav-pills pull-right">
-      <a href="facebook.com/focalapp"><img src="images/02_facebook.png" alt=""></a>
-      <a href="twitter.com/focalapp1"><img src="images/01_twitter.png" alt=""></a>
-      <a href="focalapp.wordpress.com"><img src="images/11_wordpress.png" alt=""></a>
-    </footer>
-  </tab>
-  <tab heading="Timeline">
-      <div class="container">
-        <div class="page-header">
-          <h1 id="timeline">TIMELINE</h1>
-              <button class="btn btn-default btn-sm" ng-click="tab.active">Select first</button>
+          <ul class="timeline">
+            <li class="oneMonth">
+              <!-- this is the center position -->
+              <div class="timeline-badge info">
+                <i class="glyphicon glyphicon-hand-left"></i>
 
+              </div>
 
-        </div>
-        <ul class="timeline">
-          <li>
-            <!-- this is the center position -->
-            <div class="timeline-badge info"><i class="glyphicon glyphicon-hand-left"></i>
-            </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading" ng-repeat="news in newsData.data.children">
-                <h4 class="timeline-title" ng-click="selectArticle(news)">{{news.data.title}}</h4>
-              </div>
-              
-            </div>
-          </li>
-          <li class="timeline-inverted">
-            <div class="timeline-badge warning"><i class="glyphicon glyphicon-chevron-right"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Bootstrap 2</h4>
-              </div>
-              <div class="timeline-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-                Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-                dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-                Aliquam in felis sit amet augue.</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="timeline-badge danger"><i class="glyphicon glyphicon-eye-open"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Left Event</h4>
-                <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3 years ago</small></p>
-              </div>
-              <div class="timeline-body">
-                <p>Add more progress events and milestones to the left or right side of the timeline. Each event can be tagged with a date and given a beautiful icon to symbolize it's spectacular meaning.</p>
-              </div>
-            </div>
-          </li>
-          <li class="timeline-inverted">
-            <div class="timeline-badge default"><i class="glyphicon glyphicon-home"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Right Event</h4>
-              </div>
-              <div class="timeline-body">
-                <p>Add more progress events and milestones to the left or right side of the timeline. Each event can be tagged with a date and given a beautiful icon to symbolize it's spectacular meaning.</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="timeline-badge default"><i class="glyphicon glyphicon-home"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Left Event</h4>
-              </div>
-              <div class="timeline-body">
-                <p>Add more progress events and milestones to the left or right side of the timeline. Each event can be tagged with a date and given a beautiful icon to symbolize it's spectacular meaning.</p>
-              
-                <hr>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
-                  </button>
+              <div class="timeline-panel">
+                <h4>Month 1</h4>
+
+                <div class="timeline-heading" ng-repeat="news in postableNewsData" ng-click="selectArticle(news)">
+                 <p>{{news.data.title}}</p>
                 </div>
               </div>
-            </div>
-          </li>
-          <li>
-             <div class="timeline-badge default"><i class="glyphicon glyphicon-arrow-left"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Left Event</h4>
+            </li>
+            <!-- secondset -->
+            <li class="timeline-inverted twoMonths">
+              <div class="timeline-badge info"><i class="glyphicon glyphicon-hand-right"></i>
               </div>
-              <div class="timeline-body">
-                <p>Add more progress events and milestones to the left or right side of the timeline. Each event can be tagged with a date and given a beautiful icon to symbolize it's spectacular meaning.</p>
+              <div class="timeline-panel">
+                <h4>Month 2</h4>
+                <div class="timeline-heading" ng-repeat="news in postableNewsData2" ng-click="selectArticle(news)">
+                 <p>{{news.data.title}}</p>
+                </div>
               </div>
-            </div>
-          </li>
-          <li class="timeline-inverted">
-            <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4 class="timeline-title">Oldest event</h4>
+            </li>
+            <!-- thirdSet -->
+            <li class="threeMonths">
+              <div class="timeline-badge info"><i class="glyphicon glyphicon-hand-left"></i>
               </div>
-              <div class="timeline-body">
-                <p>Add more progress events and milestones to the left or right side of the timeline. Each event can be tagged with a date and given a beautiful icon to symbolize it's spectacular meaning.</p>
+              <div class="timeline-panel">
+                <h4>Month 3</h4>
+                <div class="timeline-heading" ng-repeat="news in postableNewsData3" ng-click="selectArticle(news)">
+                 <p>{{news.data.title}}</p>
+                </div>
               </div>
-            </div>
-          </li>
-      </ul>
-    </div>
+            </li>
+             <!-- fourthset -->
+            <li class="timeline-inverted fourMonths">
+              <div class="timeline-badge info"><i class="glyphicon glyphicon-hand-right"></i>
+              </div>
+              <div class="timeline-panel">
+                <h4>Month 4</h4>
+                <div class="timeline-heading" ng-repeat="news in postableNewsData4" ng-click="selectArticle(news)">
+                 <p>{{news.data.title}}</p>
+                </div>
+              </div>
+            </li>
+      </div>
 
-  </tab>
-    <tab heading="About">About</tab>
-    <div class="searchBar">
-      <form ng-submit="searchButton(searchTopic)">
-        <input type="text" placeholder="Search" ng-model="searchTopic">
-        <button type="submit" class="btn btn-default btn-xs">Submit</button>
-      </form>
+    </tab>
+    <tab heading="About">
+     <div class="aboutPara">
+        <h3>Creating a Focused Narrative.</h3>
+        <p>
+          What I want to do with this application is make it easier for people to get the information that they want.  The aim of Focal is to provide information about a topic all located in a concise and approachable way so that people can understand the issues at hand and come to informed conclusions of their own.  I want to give people the power to understand current affairs quickly and in a straight forward way.  
+        </p>
+        <p>
+          There is so much information out there it can be difficult to get a clear picture of what is going on with a particular issue.  The difficulty of targeting the main point of the issue and the key components leads to misguided opinions and the misinformed motivations.  This app would help simplify the information by putting it all in one place with the ability to look at how it has evolved over time.  This way there is the ability to see the narrative unfold.
+        </p>
     </div>
+    </tab>
+        <div class="searchBar">
+          <form ng-submit="searchButton(searchTopic)">
+            <input type="text" placeholder="Search" ng-model="searchTopic">
+            <button type="submit" class="btn btn-default btn-xs">Submit</button>
+          </form>
+        </div>
   </tabset>
 </div>
  

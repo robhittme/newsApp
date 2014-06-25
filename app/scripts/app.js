@@ -1,5 +1,4 @@
 'use strict';
-
 angular
   .module('newsApp', [
     'ngCookies',
@@ -31,5 +30,5 @@ angular
         redirectTo: '/main'
       });
   });
-angular.module('newsApp.directive', [])
-  
+
+angular.module('newsApp.directive', []);
